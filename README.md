@@ -549,35 +549,49 @@ The system is now fully synchronized.
 
 # 🤝 Project Team & Supervision
 
+This project was developed as part of the **MAE401 – Artificial Intelligence** course at the **Faculty of Engineering, Benha University**.
+
+---
+
 ## Academic Supervision
 
 <table>
 <tr>
+
 <td align="center">
 
-<a href="LINKEDIN_DR_AMRO">
-<img src="docs/team/dr_amro.jpg" width="140px"/>
+<a href="PUT_DR_AMRO_LINKEDIN">
+<img src="docs/team/dr_amro.jpg" width="150px"/>
+
+<br>
 
 <b>Dr. Amro Shafik</b>
+
 </a>
 
 <br>
+
 Project Supervisor
 
 </td>
 
 <td align="center">
 
-<a href="LINKEDIN_ENG_MOHAMED">
-<img src="docs/team/eng_mohamed.jpg" width="140px"/>
+<a href="PUT_ENG_MOHAMED_NASSER_LINKEDIN">
+<img src="docs/team/eng_mohamed_nasser.jpg" width="150px"/>
+
+<br>
 
 <b>Eng. Mohamed Nasser</b>
+
 </a>
 
 <br>
-Technical Supervisor
+
+Teaching Assistant
 
 </td>
+
 </tr>
 </table>
 
@@ -590,16 +604,72 @@ Technical Supervisor
 
 <td align="center">
 
-<a href="YOUR_LINKEDIN">
-<b>Mahmoud Mohamed Shamekh</b>
-</a>
+<a href="PUT_MAHMOUD_LINKEDIN">
+<img src="docs/team/mahmoud.jpg" width="140px"/>
 
 <br>
-AI • Robotics • System Integration
+
+<b>Mahmoud Mohamed Shamekh</b>
+
+</a>
 
 </td>
 
 <td align="center">
+
+<a href="PUT_OMAR_METWALLY_LINKEDIN">
+<img src="docs/team/omar_metwally.jpg" width="140px"/>
+
+<br>
+
+<b>Omar Mahmoud Metwally</b>
+
+</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td align="center">
+
+<a href="PUT_OMAR_SHOKRAN_LINKEDIN">
+<img src="docs/team/omar_shokran.jpg" width="140px"/>
+
+<br>
+
+<b>Omar Shaaban Shokran</b>
+
+</a>
+
+</td>
+
+<td align="center">
+
+<a href="PUT_MOHAMED_ABDELTAWAB_LINKEDIN">
+<img src="docs/team/mohamed_abdeltawab.jpg" width="140px"/>
+
+<br>
+
+<b>Mohamed Abdeltawab</b>
+
+</a>
+
+</td>
+
+</tr>
+
+</table>
+
+---
+
+### Acknowledgments
+
+We would like to express our sincere appreciation to our supervisors for their guidance, support, and valuable feedback throughout the development of this project.
+
+We also thank all team members for their dedication, collaboration, and continuous efforts that contributed to the successful completion of this work.
+="center">
 
 <a href="LINK_2">
 <b>Mohsen Hany Mohsen</b>
