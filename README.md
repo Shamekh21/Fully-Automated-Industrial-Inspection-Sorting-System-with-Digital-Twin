@@ -546,7 +546,6 @@ The system is now fully synchronized.
 ✔ Industry 4.0 Concepts
 
 ---
-
 # 🤝 Project Team & Supervision
 
 This project was developed as part of the **MAE401 – Artificial Intelligence** course at the **Faculty of Engineering, Benha University**.
@@ -669,45 +668,7 @@ Teaching Assistant
 We would like to express our sincere appreciation to our supervisors for their guidance, support, and valuable feedback throughout the development of this project.
 
 We also thank all team members for their dedication, collaboration, and continuous efforts that contributed to the successful completion of this work.
-="center">
 
-<a href="LINK_2">
-<b>Mohsen Hany Mohsen</b>
-</a>
-
-<br>
-Development Team
-
-</td>
-
-<td align="center">
-
-<a href="LINK_3">
-<b>Youssef Mostafa Ayad</b>
-</a>
-
-<br>
-Development Team
-
-</td>
-
-<td align="center">
-
-<a href="LINK_4">
-<b>Barthinia Hany</b>
-</a>
-
-<br>
-Development Team
-
-</td>
-
-</tr>
-</table>
-
----
-
-The successful completion of this project was made possible through the combined efforts of the supervisors and team members, whose technical support, guidance, and collaboration were invaluable throughout the project lifecycle.
 ---
 
 # 📜 License
