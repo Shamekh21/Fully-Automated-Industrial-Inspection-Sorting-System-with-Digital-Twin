@@ -547,20 +547,97 @@ The system is now fully synchronized.
 
 ---
 
-# 👨‍💻 Author
+# 🤝 Project Team & Supervision
 
-Mahmoud Mohamed Shamekh
+## Academic Supervision
 
-Mechatronics Engineering
+<table>
+<tr>
+<td align="center">
 
-Areas of Interest:
+<a href="LINKEDIN_DR_AMRO">
+<img src="docs/team/dr_amro.jpg" width="140px"/>
 
-* Robotics
-* Artificial Intelligence
-* Automation
-* Digital Twin Systems
-* Industry 4.0
+<b>Dr. Amro Shafik</b>
+</a>
 
+<br>
+Project Supervisor
+
+</td>
+
+<td align="center">
+
+<a href="LINKEDIN_ENG_MOHAMED">
+<img src="docs/team/eng_mohamed.jpg" width="140px"/>
+
+<b>Eng. Mohamed Nasser</b>
+</a>
+
+<br>
+Technical Supervisor
+
+</td>
+</tr>
+</table>
+
+---
+
+## Development Team
+
+<table>
+<tr>
+
+<td align="center">
+
+<a href="YOUR_LINKEDIN">
+<b>Mahmoud Mohamed Shamekh</b>
+</a>
+
+<br>
+AI • Robotics • System Integration
+
+</td>
+
+<td align="center">
+
+<a href="LINK_2">
+<b>Mohsen Hany Mohsen</b>
+</a>
+
+<br>
+Development Team
+
+</td>
+
+<td align="center">
+
+<a href="LINK_3">
+<b>Youssef Mostafa Ayad</b>
+</a>
+
+<br>
+Development Team
+
+</td>
+
+<td align="center">
+
+<a href="LINK_4">
+<b>Barthinia Hany</b>
+</a>
+
+<br>
+Development Team
+
+</td>
+
+</tr>
+</table>
+
+---
+
+The successful completion of this project was made possible through the combined efforts of the supervisors and team members, whose technical support, guidance, and collaboration were invaluable throughout the project lifecycle.
 ---
 
 # 📜 License
