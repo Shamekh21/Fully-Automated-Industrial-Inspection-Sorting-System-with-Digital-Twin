@@ -1,6 +1,6 @@
-# 🏭 Fully Automated Industrial Inspection & Sorting System
+# 🏭 Fully Automated Industrial Inspection & Sorting System with Digital Twin
 
-### AI-Powered Digital Twin for Smart Manufacturing using Computer Vision, Robotics Optimization, MATLAB, CoppeliaSim and Hardware-in-the-Loop Integration
+### AI Vision • Robotics Optimization • MATLAB • CoppeliaSim • Hardware-In-The-Loop
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red)
@@ -12,57 +12,57 @@
 
 # 🎥 Full System Demonstration
 
-This GIF demonstrates the complete synchronized operation of:
+> GIF will be added after video processing.
 
-* AI Vision Inspection
-* CNN Defect Classification
-* Expert System Decision Making
-* MATLAB Robotics Controller
-* Optimization Algorithms
-* CoppeliaSim Digital Twin
-* Arduino HMI
-* TCP/IP Communication
-* Automated Pick-and-Place Sorting
+![Full System Demo](docs/gifs/full_system_demo.gif)
 
-<p align="center">
-<img src="docs/gifs/full_system_demo.gif" width="950">
-</p>
+This demonstration shows the complete industrial workflow:
+
+* Conveyor monitoring
+* AI vision inspection
+* CNN classification
+* Expert system decision making
+* MATLAB robot controller
+* Optimization-based path planning
+* CoppeliaSim digital twin execution
+* Arduino HMI synchronization
+* OK and Defective sorting cycles
 
 ---
 
 # 📌 Project Overview
 
-This project presents a complete **Cyber-Physical Production System (CPPS)** and **Digital Twin Architecture** developed for automated industrial quality inspection and sorting applications.
+This project presents a complete **Cyber-Physical Production System (CPPS)** designed for automated industrial quality inspection and intelligent sorting.
 
-The system integrates Artificial Intelligence, Robotics, Optimization Algorithms, Digital Twin Technology, and Hardware-in-the-Loop communication into a unified smart manufacturing framework.
+The system combines Artificial Intelligence, Robotics, Optimization Algorithms, Digital Twin Technology, TCP/IP Communication, and Hardware-In-The-Loop integration to simulate a modern Industry 4.0 manufacturing cell.
 
-A camera-based inspection module analyzes casting parts moving on a conveyor belt. A custom Convolutional Neural Network (CNN) identifies defective products in real-time. Based on the classification result, an Expert System generates industrial decisions which are transmitted to a MATLAB robotics controller.
+A camera-based inspection system analyzes industrial casting parts moving on a conveyor. A custom Convolutional Neural Network (CNN) classifies each part as either **OK** or **Defective**.
 
-MATLAB computes robot motion using Forward Kinematics, Inverse Kinematics, and Optimization Algorithms before sending commands to a UR5 robot operating inside a CoppeliaSim Digital Twin environment.
+The AI decision is translated by an Expert System into robotic actions, which are executed through MATLAB, optimized using multiple planning algorithms, and visualized in real-time inside a CoppeliaSim Digital Twin environment.
 
-The final system creates a fully automated inspection and sorting workflow that closely resembles Industry 4.0 manufacturing systems.
+The final system performs fully automated inspection and sorting without human intervention.
+
+---
+
+# 🚀 Key Features
+
+* Real-Time AI Vision Inspection
+* Custom CNN Defect Detection Model
+* Expert System Decision Layer
+* TCP/IP Distributed Architecture
+* MATLAB Robotics Control Center
+* Forward & Inverse Kinematics
+* Multi-Algorithm Optimization Framework
+* CoppeliaSim Digital Twin
+* Hardware-In-The-Loop Integration
+* Arduino LCD & Status Indicators
+* Autonomous Conveyor-Based Sorting
+* Manual and Automatic Operating Modes
+* Emergency Stop Functionality
 
 ---
 
 # 🏗 System Architecture
-
-<p align="center">
-<img src="docs/images/System_Architecture.jpg" width="1000">
-</p>
-
-The project consists of four synchronized computational layers:
-
-| Layer              | Technology       | Function                  |
-| ------------------ | ---------------- | ------------------------- |
-| AI Layer           | Python + PyTorch | Defect Detection          |
-| Decision Layer     | Expert System    | Sorting Logic             |
-| Control Layer      | MATLAB           | Kinematics & Optimization |
-| Digital Twin Layer | CoppeliaSim      | Virtual Factory           |
-| Hardware Layer     | Arduino          | HMI & Monitoring          |
-
----
-
-# ⚡ Cyber-Physical System Data Flow
 
 ```text
 Industrial Camera
@@ -83,7 +83,7 @@ TCP/IP Communication
 MATLAB Controller
         │
         ▼
-Optimization Engine
+Optimization Algorithms
         │
         ▼
 Inverse Kinematics
@@ -102,154 +102,207 @@ Arduino HMI Feedback
 
 # 🌐 Communication Architecture
 
-The entire system is synchronized through multiple communication channels.
+The project operates using a distributed communication framework.
 
-| Port    | Protocol   | Function                |
-| ------- | ---------- | ----------------------- |
-| 65432   | TCP/IP     | Python ↔ MATLAB         |
-| 19000   | Remote API | MATLAB ↔ CoppeliaSim    |
-| 19001   | TCP Socket | Python ↔ Arduino Bridge |
-| USB COM | Serial     | Bridge ↔ Arduino        |
+```text
+                    TCP/IP
+        +-------------------------+
+        |         MATLAB          |
+        |  IK / FK / Optimizers   |
+        +-----------+-------------+
+                    |
+                    | Port 65432
+                    |
+                    ▼
+        +-------------------------+
+        |      Python AI Core     |
+        | CNN + Expert System     |
+        +-----------+-------------+
+                    |
+                    | Port 19001
+                    |
+                    ▼
+        +-------------------------+
+        | Arduino Serial Bridge   |
+        | LCD + LEDs              |
+        +-------------------------+
 
-This distributed architecture allows each subsystem to operate independently while maintaining real-time synchronization.
+                    ▲
+                    |
+                    | Port 19000
+                    |
+        +-------------------------+
+        |      CoppeliaSim        |
+        | Conveyor + UR5 + Sensor |
+        +-------------------------+
+```
 
 ---
 
-# 🌍 Digital Twin Environment
+# 🔧 Software Stack
 
-The industrial workcell was developed in CoppeliaSim and serves as a Digital Twin of the physical manufacturing station.
+### Artificial Intelligence
 
-The environment contains:
+* Python
+* PyTorch
+* OpenCV
+* TorchVision
 
-* Conveyor Belt
-* Proximity Sensor
-* Sorting Zones
-* UR5 Robot Manipulator
-* Pick-and-Place Workspace
+### Robotics & Control
 
-<p align="center">
-<img src="docs/images/coppeliasim_workcell.jpg" width="900">
-</p>
+* MATLAB
+* Robotics System Toolbox
+* Instrument Control Toolbox
+* Global Optimization Toolbox
 
-## Sorting an OK Part
+### Digital Twin
 
-<p align="center">
-<img src="docs/gifs/coppeliasim_ok.gif" width="850">
-</p>
+* CoppeliaSim (V-REP)
 
-## Sorting a Defective Part
+### Hardware Layer
 
-<p align="center">
-<img src="docs/gifs/coppeliasim_defect.gif" width="850">
-</p>
+* Arduino UNO
+* LCD Display
+* LED Indicators
+
+---
+
+# 📂 Dataset
+
+The AI model was trained using an industrial casting inspection dataset containing:
+
+* OK Parts
+* Defective Parts
+* Surface Cracks
+* Surface Scratches
+* Manufacturing Imperfections
+
+Dataset Structure:
+
+```text
+casting_data/
+├── train/
+│   ├── ok_front/
+│   └── def_front/
+│
+└── test/
+    ├── ok_front/
+    └── def_front/
+```
+
+Preprocessing Pipeline:
+
+1. RGB Image
+2. Grayscale Conversion
+3. Resize to 64×64
+4. Tensor Conversion
+5. CNN Inference
 
 ---
 
 # 🧠 AI Vision System
 
-The vision subsystem performs automated quality inspection using a custom CNN implemented with PyTorch.
+The inspection subsystem was developed using PyTorch and OpenCV.
 
-The processing pipeline consists of:
+Processing Pipeline:
 
-1. Image Acquisition
-2. Grayscale Conversion
-3. Image Resizing (64×64)
-4. Tensor Conversion
-5. CNN Inference
-6. Confidence Estimation
-7. Expert System Decision
+Camera → Image Processing → CNN → Classification → Expert System
 
-## Camera Initialization
+### Camera Initialization
 
-<p align="center">
-<img src="docs/images/camera_test.png" width="750">
-</p>
+![Camera Test](docs/images/camera_test.jpg)
 
-## Image Processing Pipeline
+### Image Processing Pipeline
 
-<p align="center">
-<img src="docs/images/image_processing_pipeline.png" width="900">
-</p>
+![Processing Pipeline](docs/images/image_processing_pipeline.jpg)
 
-## Histogram Analysis
+### Histogram Analysis
 
-<p align="center">
-<img src="docs/images/histogram_analysis.png" width="850">
-</p>
+![Histogram Analysis](docs/images/histogram_analysis.jpg)
 
-## Detailed Dataset Analysis
+### Detailed Image Analysis
 
-<p align="center">
-<img src="docs/images/detailed_image_analysis.png" width="850">
-</p>
+![Detailed Analysis](docs/images/detailed_image_analysis.jpg)
 
 ---
 
 # 🤖 CNN Architecture
 
-The defect detection model was developed using PyTorch.
-
-Architecture:
+The custom CNN architecture was designed specifically for binary defect classification.
 
 ```text
-Input (64×64×1)
+Input Image (64×64×1)
 
-↓
+        │
+        ▼
+
 Conv2D (1 → 16)
-↓
-ReLU
-↓
-MaxPooling
 
-↓
+        │
+        ▼
+
+ReLU
+
+        │
+        ▼
+
+MaxPool
+
+        │
+        ▼
+
 Conv2D (16 → 32)
-↓
-ReLU
-↓
-MaxPooling
 
-↓
+        │
+        ▼
+
+ReLU
+
+        │
+        ▼
+
+MaxPool
+
+        │
+        ▼
+
 Flatten
 
-↓
-Fully Connected (8192 → 128)
+        │
+        ▼
 
-↓
+FC (8192 → 128)
+
+        │
+        ▼
+
 ReLU
 
-↓
-Fully Connected (128 → 2)
+        │
+        ▼
 
-↓
-Output Layer
+FC (128 → 2)
+
+        │
+        ▼
+
+Output
+(OK / DEFECTIVE)
 ```
 
 Training Configuration:
 
-* Framework: PyTorch
 * Optimizer: Adam
 * Learning Rate: 0.001
 * Loss Function: CrossEntropyLoss
 * Binary Classification
-* Real Industrial Casting Dataset
+* Real Industrial Dataset
 
 ---
 
-# 📈 Model Training
+# 📈 Model Evaluation
 
-<p align="center">
-<img src="docs/images/training_curve.png" width="850">
-</p>
-
-The CNN demonstrates stable convergence and reliable classification performance during training.
-
----
-
-# 🎯 Model Evaluation
-
-<p align="center">
-<img src="docs/images/confusion_matrix.png" width="750">
-</p>
+![Confusion Matrix](docs/images/confusion_matrix.jpg)
 
 Evaluation Metrics:
 
@@ -259,13 +312,11 @@ Evaluation Metrics:
 * F1 Score
 * Confusion Matrix
 
-The trained model successfully distinguishes acceptable parts from defective products.
-
 ---
 
-# 🧩 Expert System Layer
+# 🧩 Expert System
 
-The Expert System acts as the bridge between Artificial Intelligence and Robotics.
+The Expert System converts AI predictions into deterministic industrial actions.
 
 Decision Rules:
 
@@ -273,210 +324,232 @@ Decision Rules:
 IF Part = OK
     → Packaging Line
     → Green Bin
+    → Y = +500
 
 IF Part = Defective
     → Scrap Bin
     → Red Bin
+    → Y = -500
 ```
 
-Generated outputs include:
+Generated Outputs:
 
-* Robot Target Coordinates
+* Robot Coordinates
 * Sorting Decision
+* Arduino Signals
 * MATLAB Commands
-* Arduino Status Signals
 
 ---
 
-# ⚙ MATLAB Robotics Control Center
+# ⚙️ MATLAB Robotics Control Center
 
-MATLAB serves as the central controller of the robotic system.
+MATLAB acts as the master controller of the entire system.
 
 Responsibilities:
 
 * TCP Server
-* Robot Simulation
+* Robot Control
 * Forward Kinematics
 * Inverse Kinematics
-* Optimization Algorithms
-* Real-Time Monitoring
-* Performance Benchmarking
+* Optimization
+* Benchmarking
+* Digital Twin Synchronization
 
-<p align="center">
-<img src="docs/images/matlab_gui.jpg" width="950">
-</p>
+![MATLAB GUI](docs/images/matlab_gui.jpg)
 
-## MATLAB GUI – OK Part
+## MATLAB – OK Sorting
 
-<p align="center">
-<img src="docs/gifs/matlab_ok.gif" width="850">
-</p>
+![MATLAB OK](docs/gifs/matlab_ok.gif)
 
-## MATLAB GUI – Defective Part
+## MATLAB – Defective Sorting
 
-<p align="center">
-<img src="docs/gifs/matlab_defect.gif" width="850">
-</p>
-
----
-
-# 🤖 Robotics Mathematics
-
-The controller implements core robotics concepts including:
-
-* Forward Kinematics
-* Inverse Kinematics
-* Homogeneous Transformation Matrices
-* Workspace Validation
-* End-Effector Pose Estimation
-* Joint Constraint Handling
-* Trajectory Planning
-
-These mathematical models enable accurate robot positioning and industrial pick-and-place operations.
+![MATLAB Defect](docs/gifs/matlab_defect.gif)
 
 ---
 
 # 🚀 Optimization Algorithms
 
-Multiple optimization algorithms were implemented and benchmarked.
-
-Implemented Planners:
+Implemented Path Planners:
 
 * Analytical Inverse Kinematics
 * Genetic Algorithm (GA)
 * Simulated Annealing (SA)
 * Particle Swarm Optimization (PSO)
-* Hill Climbing Pattern Search
+* Pattern Search
 
 Evaluation Criteria:
 
-* Convergence Speed
+* Joint Motion Cost
+* Energy Consumption
 * Position Accuracy
-* Joint Smoothness
-* Computational Cost
+* Smoothness
+* Computational Time
 
-The GUI supports automatic benchmarking and best-solution selection.
+The GUI supports:
+
+Run ALL & Benchmark Best
+
+for automatic comparison and optimal solution selection.
 
 ---
 
-# 🔌 Hardware-in-the-Loop (Arduino HMI)
+# 🌍 Digital Twin Environment
 
-A physical Arduino subsystem was integrated to emulate industrial HMI behavior.
+The industrial workcell was modeled inside CoppeliaSim.
+
+Components:
+
+* Conveyor Belt
+* Proximity Sensor
+* Sorting Stations
+* UR5 Robot
+* Pick-and-Place Workspace
+
+![CoppeliaSim Workcell](docs/images/coppeliasim_workcell.jpg)
+
+## OK Part
+
+![Coppelia OK](docs/gifs/coppelia_ok.gif)
+
+## Defective Part
+
+![Coppelia Defect](docs/gifs/coppelia_defect.gif)
+
+---
+
+# 🔌 Hardware-In-The-Loop (HIL)
+
+The project includes a physical Arduino subsystem acting as an industrial HMI.
 
 Features:
 
-* Real-Time Status Monitoring
-* LCD Feedback
-* OK / Defective Indicators
-* Serial Communication
+* LCD Display
+* Status LEDs
+* Real-Time Feedback
+* TCP-to-Serial Integration
 
-<p align="center">
-<img src="docs/images/Arduion_circuit.jpg" width="850">
-</p>
+![Arduino Circuit](docs/images/arduino_circuit.jpg)
 
-## LCD Status – OK Part
+## LCD – OK
 
-<p align="center">
-<img src="docs/gifs/lcd_ok.gif" width="600">
-</p>
+![LCD OK](docs/gifs/lcd_ok.gif)
 
-## LCD Status – Defective Part
+## LCD – Defective
 
-<p align="center">
-<img src="docs/gifs/lcd_defect.gif" width="600">
-</p>
+![LCD Defect](docs/gifs/lcd_defect.gif)
 
 ---
 
-# 📂 Repository Structure
+# ⚙️ Operating Modes
 
-```text
-Industrial-AI-Sorting-System
-│
-├── python/
-│   ├── training
-│   ├── evaluation
-│   ├── realtime_controller
-│   └── bridge
-│
-├── matlab/
-│   ├── GUI
-│   ├── IK
-│   ├── FK
-│   └── Optimization
-│
-├── coppeliasim/
-│   └── workcell_scene
-│
-├── arduino/
-│   └── HMI
-│
-├── docs/
-│   ├── images
-│   └── gifs
-│
-└── README.md
+### AUTO Mode
+
+* Sensor Driven
+* Fully Autonomous
+* Continuous Production
+
+### MANUAL Mode
+
+* User Controlled
+* Editable Coordinates
+* Testing & Debugging
+
+### Emergency Stop
+
+Press:
+
+Q
+
+to safely terminate:
+
+* Python
+* MATLAB
+* Arduino
+* TCP Connections
+
+---
+
+# 📦 Installation & Setup
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/USERNAME/Industrial-Sorting-System.git
 ```
 
+## 2. Install Python Packages
+
+```bash
+pip install torch torchvision opencv-python matplotlib pillow pyserial scikit-learn
+```
+
+## 3. Install Software
+
+* MATLAB R2023a or newer
+* CoppeliaSim
+* Arduino IDE
+
+## 4. Configure Dataset Paths
+
+Update image paths inside:
+
+```text
+train_model.py
+evaluate_model.py
+realtime_conveyor.py
+```
+
+## 5. Configure Arduino Port
+
+Update COM port in:
+
+```text
+bridge.py
+```
+
+if auto-detection fails.
+
 ---
 
-# 🚀 System Startup Sequence
+# ▶️ Execution Order
 
-Launch the software in the following order:
+IMPORTANT:
 
-1. Start CoppeliaSim and run the scene.
-2. Run Arduino Bridge (`bridge.py`).
-3. Launch MATLAB GUI.
-4. Press Connect.
-5. Run Python Real-Time Controller.
+Run programs in the following order:
 
-The system will automatically begin monitoring incoming parts and sorting them accordingly.
+1. Launch CoppeliaSim Scene
+2. Run bridge.py
+3. Open MATLAB GUI
+4. Click Connect
+5. Run realtime_conveyor.py
+
+The system is now fully synchronized.
 
 ---
 
-# 🏆 Key Achievements
+# 🏆 Project Achievements
 
-✔ Custom CNN Defect Detection Model
+✔ AI-Based Defect Detection
 
-✔ Expert-System-Based Decision Layer
+✔ Digital Twin Implementation
 
-✔ MATLAB Robotics Controller
-
-✔ Advanced Optimization Algorithms
-
-✔ UR5 Digital Twin
+✔ Hardware-In-The-Loop Integration
 
 ✔ Real-Time TCP/IP Communication
 
-✔ Hardware-in-the-Loop Integration
+✔ Optimization-Based Motion Planning
 
-✔ Industrial HMI Interface
+✔ MATLAB-CoppeliaSim Synchronization
 
-✔ Automated Pick-and-Place Sorting
+✔ Industrial Automation Workflow
 
-✔ Cyber-Physical System Architecture
-
-✔ Industry 4.0 Oriented Design
-
----
-
-# 🔮 Future Work
-
-Potential future extensions include:
-
-* YOLO-Based Defect Detection
-* ROS2 Integration
-* PLC Communication
-* Real Industrial Camera Deployment
-* Reinforcement Learning Motion Planning
-* Multi-Robot Coordination
-* Edge AI Deployment
+✔ Industry 4.0 Concepts
 
 ---
 
 # 👨‍💻 Author
 
-**Mahmoud Shamekh**
+Mahmoud Mohamed Shamekh
 
 Mechatronics Engineering
 
@@ -484,7 +557,7 @@ Areas of Interest:
 
 * Robotics
 * Artificial Intelligence
-* Industrial Automation
+* Automation
 * Digital Twin Systems
 * Industry 4.0
 
