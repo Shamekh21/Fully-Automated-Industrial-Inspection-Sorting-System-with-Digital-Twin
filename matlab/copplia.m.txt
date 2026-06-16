@@ -1,0 +1,118 @@
+% ==========================================
+% 1. إعداد الاتصال بـ CoppeliaSim
+% ==========================================
+vrep = remApi('remoteApi');
+vrep.simxFinish(-1);
+id = vrep.simxStart('127.0.0.1', 19000, true, true, 5000, 5);
+if id < 0
+    disp('Failed to connect MATLAB to CoppeliaSim.')
+    vrep.delete();
+    return;
+else
+    fprintf('Connection %d to remote API server is open.\n', id);
+end
+
+% ==========================================
+% 2. الحصول على معرفات المفاصل
+% ==========================================
+jointNames = {'joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6'};
+jointHandles = zeros(1, 6);
+for i = 1:6
+    [~, jointHandles(i)] = vrep.simxGetObjectHandle(id, jointNames{i}, vrep.simx_opmode_blocking);
+end
+
+% ==========================================
+% 3. الحصول على معرف الحساس
+% ==========================================
+sensorName = '/create_boxes/_sensor'; 
+[res, sensorHandle] = vrep.simxGetObjectHandle(id, sensorName, vrep.simx_opmode_blocking);
+if res ~= vrep.simx_return_ok
+    fprintf('ERROR: Cannot find the sensor named "%s"!\n', sensorName);
+    vrep.simxFinish(id);
+    vrep.delete();
+    return; 
+else
+    fprintf('Successfully acquired proximity sensor handle.\n');
+end
+
+% ==========================================
+% 4. إعداد الوضعيات الثابتة بالدرجات وتصفير الذاكرة
+% ==========================================
+targetPos1_Deg = [-42.72, -96.49+90, 139.35, -42.85, -42.72, -90]; % Pick (ثابت)
+targetPos3_Deg = [0, 0, 0, 0, 0, 0];                               % Home (ثابت)
+num_steps = 100;     
+pause_time = 0.02;   
+
+% 🌟 تصفير إشارة البدء عشان الروبوت ميتحركش مع نفسه 🌟
+setappdata(0, 'AI_Angles_Ready', false);
+
+% فتح الجريبر في البداية
+vrep.simxSetIntegerSignal(id, 'gripper_status', 0, vrep.simx_opmode_oneshot);
+disp('System ready. Waiting for objects to arrive... Press Ctrl+C to stop.');
+
+% ==========================================
+% 5. حلقة العمل الرئيسية
+% ==========================================
+while true
+    [res, detectionState, ~, ~, ~] = vrep.simxReadProximitySensor(id, sensorHandle, vrep.simx_opmode_blocking);
+    
+    if res == vrep.simx_return_ok && detectionState > 0
+        fprintf('\n[!] Object detected on conveyor! Waiting for AI GUI decision...\n');
+        
+        % 🌟 التعديل الأساسي: نظام الانتظار (Wait Lock) 🌟
+        % الكود هيقف هنا تماماً ومش هيكمل لحد ما الـ GUI يبعت إشارة إن الزوايا جاهزة
+        while ~getappdata(0, 'AI_Angles_Ready')
+            pause(0.2); % راحة بسيطة للمعالج
+        end
+        
+        % بمجرد وصول الإشارة، هنسحب الزوايا اللي الـ GUI حسبها
+        dynamicPlaceAngles = getappdata(0, 'Dynamic_Place_Angles');
+        
+        % تصفير الإشارة فوراً عشان ميشتغلش بالغلط على نفس القطعة مرتين
+        setappdata(0, 'AI_Angles_Ready', false);
+        
+        % إضافة الـ Offset لتعويض فرق محاور الكوبيليا
+        targetPos2_Deg = dynamicPlaceAngles' + [0 90 0 0 0 0]; 
+        fprintf('✅ AI Decision Received! Moving to Place angles...\n');
+        
+        % تجميع المسار النهائي
+        allTargets = [targetPos1_Deg; targetPos2_Deg; targetPos3_Deg];
+        
+        for posIndex = 1:size(allTargets, 1)
+            fprintf('Moving to Target Position %d...\n', posIndex);
+            
+            target_rad = allTargets(posIndex, :) * (pi / 180);
+            current_rad = zeros(1, 6);
+            
+            for j = 1:6
+                [~, current_rad(j)] = vrep.simxGetJointPosition(id, jointHandles(j), vrep.simx_opmode_blocking);
+            end
+            
+            for step = 1:num_steps
+                for j = 1:6
+                    intermediate_angle = current_rad(j) + (target_rad(j) - current_rad(j)) * (step / num_steps);
+                    vrep.simxSetJointTargetPosition(id, jointHandles(j), intermediate_angle, vrep.simx_opmode_oneshot);
+                end
+                pause(pause_time);
+            end
+            
+            if posIndex == 1
+                vrep.simxSetIntegerSignal(id, 'gripper_status', 1, vrep.simx_opmode_oneshot);
+                pause(1.5); 
+            elseif posIndex == 2
+                vrep.simxSetIntegerSignal(id, 'gripper_status', 0, vrep.simx_opmode_oneshot);
+                pause(1.5); 
+            end
+            
+            pause(1);
+        end
+        
+        disp('Cycle completed. Returning to Home and waiting for the next object...');
+        
+    elseif res == vrep.simx_return_ok && detectionState == 0
+        pause(0.1);
+    else
+        fprintf('Warning: Error reading sensor (Code: %d). Retrying...\n', res);
+        pause(0.5);
+    end
+end
