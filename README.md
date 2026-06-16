@@ -212,19 +212,19 @@ Camera → Image Processing → CNN → Classification → Expert System
 
 ### Camera Initialization
 
-![Camera Test](docs/images/camera_test.jpg)
+![Camera Test](docs/images/camera_test.png)
 
 ### Image Processing Pipeline
 
-![Processing Pipeline](docs/images/image_processing_pipeline.jpg)
+![Processing Pipeline](docs/images/image_processing_pipeline.png)
 
 ### Histogram Analysis
 
-![Histogram Analysis](docs/images/histogram_analysis.jpg)
+![Histogram Analysis](docs/images/histogram_analysis.png)
 
 ### Detailed Image Analysis
 
-![Detailed Analysis](docs/images/detailed_image_analysis.jpg)
+![Detailed Analysis](docs/images/detailed_image_analysis.png)
 
 ---
 
@@ -304,7 +304,7 @@ Training Configuration:
 
 # 📈 Model Evaluation
 
-![Confusion Matrix](docs/images/confusion_matrix.jpg)
+![Confusion Matrix](docs/images/confusion_matrix.png)
 
 Evaluation Metrics:
 
