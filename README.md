@@ -606,7 +606,7 @@ Teaching Assistant
 <td align="center">
 
 <a href="PUT_MAHMOUD_LINKEDIN">
-<img src="docs/team/mahmoud.jpg" width="140px"/>
+<img src="docs/team/mahmoud.jpeg" width="140px"/>
 
 <br>
 
@@ -619,7 +619,7 @@ Teaching Assistant
 <td align="center">
 
 <a href="PUT_OMAR_METWALLY_LINKEDIN">
-<img src="docs/team/omar_metwally.jpg" width="140px"/>
+<img src="docs/team/omar_metwally.jpeg" width="140px"/>
 
 <br>
 
