@@ -168,6 +168,8 @@ The project operates using a distributed communication framework.
 ---
 
 # 📂 Dataset
+The dataset used in this project is not included in this repository due to size limitations.
+the link to download it : https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product?resource=download
 
 The AI model was trained using an industrial casting inspection dataset containing:
 
