@@ -640,7 +640,7 @@ Teaching Assistant
 
 <br>
 
-<b>Omar Shaaban Shokran</b>
+<b>Omar Shokran</b>
 
 </a>
 
