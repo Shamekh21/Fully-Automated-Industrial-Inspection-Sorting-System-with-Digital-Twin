@@ -171,13 +171,12 @@ The project operates using a distributed communication framework.
 The dataset used in this project is not included in this repository due to size limitations.
 the link to download it : https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product?resource=download
 
-The AI model was trained using an industrial casting inspection dataset containing:
+The AI vision model performs binary classification of industrial casting products:
 
 * OK Parts
 * Defective Parts
-* Surface Cracks
-* Surface Scratches
-* Manufacturing Imperfections
+
+Defective samples include multiple defect patterns commonly found in casting processes, such as cracks, scratches, and surface imperfections.
 
 Dataset Structure:
 
