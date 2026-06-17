@@ -561,7 +561,7 @@ This project was developed as part of the **MAE401 – Artificial Intelligence**
 
 <td align="center">
 
-<a href="PUT_DR_AMRO_LINKEDIN">
+<a href="https://www.linkedin.com/in/amro-shafik/">
 <img src="docs/team/dr_amro.jpg" width="150px"/>
 
 <br>
@@ -578,8 +578,8 @@ Project Supervisor
 
 <td align="center">
 
-<a href="PUT_ENG_MOHAMED_NASSER_LINKEDIN">
-<img src="docs/team/eng_mohamed_nasser.jpg" width="150px"/>
+<a href="https://www.linkedin.com/in/mohammad-nasir-870a102a3/">
+<img src="docs/team/eng_mohamed_nasser.jpeg" width="150px"/>
 
 <br>
 
@@ -605,7 +605,7 @@ Teaching Assistant
 
 <td align="center">
 
-<a href="PUT_MAHMOUD_LINKEDIN">
+<a href="https://www.linkedin.com/in/mahmoud-mohamed-7784ab2a5/">
 <img src="docs/team/mahmoud.jpeg" width="140px"/>
 
 <br>
@@ -618,7 +618,7 @@ Teaching Assistant
 
 <td align="center">
 
-<a href="PUT_OMAR_METWALLY_LINKEDIN">
+<a href="https://www.linkedin.com/in/omar-metwally-6024a7365/">
 <img src="docs/team/omar_metwally.jpeg" width="140px"/>
 
 <br>
@@ -635,7 +635,7 @@ Teaching Assistant
 
 <td align="center">
 
-<a href="PUT_OMAR_SHOKRAN_LINKEDIN">
+<a href="https://www.linkedin.com/in/omar-shokran-7b6043314/">
 <img src="docs/team/omar_shokran.jpeg" width="140px"/>
 
 <br>
@@ -648,7 +648,7 @@ Teaching Assistant
 
 <td align="center">
 
-<a href="PUT_MOHAMED_ABDELTAWAB_LINKEDIN">
+<a href="https://www.linkedin.com/in/mohamed-abdeltawab-7442201bb/">
 <img src="docs/team/mohamed_abdeltawab.jpeg" width="140px"/>
 
 <br>
