@@ -636,7 +636,7 @@ Teaching Assistant
 <td align="center">
 
 <a href="PUT_OMAR_SHOKRAN_LINKEDIN">
-<img src="docs/team/omar_shokran.jpg" width="140px"/>
+<img src="docs/team/omar_shokran.jepg" width="140px"/>
 
 <br>
 
@@ -649,7 +649,7 @@ Teaching Assistant
 <td align="center">
 
 <a href="PUT_MOHAMED_ABDELTAWAB_LINKEDIN">
-<img src="docs/team/mohamed_abdeltawab.jpg" width="140px"/>
+<img src="docs/team/mohamed_abdeltawab.jepg" width="140px"/>
 
 <br>
 
