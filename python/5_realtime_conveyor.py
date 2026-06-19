@@ -51,11 +51,11 @@ def_images = [os.path.join(def_dir, f) for f in os.listdir(def_dir)]
 all_images = ok_images + def_images
 random.shuffle(all_images)
 
-# ── 🌟 التعديل هنا: البورت بقى 19001 🌟 ──
+
 def send_to_arduino(label):
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect(('127.0.0.1', 19001)) # تم تغيير البورت لتفادي التعارض
+        s.connect(('127.0.0.1', 19001)) 
         
         if label == "DEFECTIVE":
             command = "DEFECT\n"
@@ -73,7 +73,7 @@ def send_to_arduino(label):
         pass 
 # ────────────────────────────────────────────────────────
 
-# 🌟 فتح الاتصال مع الماتلاب 🌟
+# 🌟Open the connection with MATLAB🌟
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(('127.0.0.1', 65432))
@@ -148,7 +148,7 @@ while idx < len(all_images):
             continue 
 
     # ==========================================
-    # جزء معالجة الصورة
+    # Image processing 
     # ==========================================
     image = cv2.imread(image_path)
     if image is None: 
@@ -189,7 +189,7 @@ while idx < len(all_images):
 
     print(f"👁️ Vision Result: {label} ({confidence_score:.1f}%)")
     
-    # إرسال النتيجة للأردوينو
+    # Send the result to Arduino
     send_to_arduino(label)
     
     try:
