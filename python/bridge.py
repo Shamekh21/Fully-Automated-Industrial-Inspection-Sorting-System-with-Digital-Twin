@@ -3,17 +3,17 @@ import serial.tools.list_ports
 import socket
 import sys
 
-# 🌟 البورت الجديد (19001) عشان ميتعارضش مع الكوبيليا 🌟
+# 🌟 The port (19001) so as not to conflict with the copy 🌟
 SOCKET_HOST = '127.0.0.1'
 SOCKET_PORT = 19001
 
 def find_arduino():
-    # محاولة إيجاد الأردوينو أوتوماتيكياً
+    # find the Arduino automatically
     ports = list(serial.tools.list_ports.comports())
     for p in ports:
         if "Arduino" in p.description or "CH340" in p.description or "USB Serial Device" in p.description or "Serial" in p.description:
             return p.device
-    return "COM10" # البورت الافتراضي بتاعك لو ملقاهوش
+    return "COM10" # اYour default port if you can't find it
 
 def main():
     arduino_port = find_arduino()
@@ -26,7 +26,7 @@ def main():
         sys.exit(1)
 
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # حل مشكلة البورت المعلق في الويندوز
+    # How to fix a stuck port in Windows
     server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) 
     
     server.bind((SOCKET_HOST, SOCKET_PORT))
@@ -39,7 +39,7 @@ def main():
             data = conn.recv(1024).decode('utf-8')
             if data:
                 print(f"📥 Received from AI: {data.strip()}")
-                ser.write(data.encode('utf-8')) # إرسال للأردوينو
+                ser.write(data.encode('utf-8')) # Send to Arduino
             conn.close()
         except KeyboardInterrupt:
             print("\n🛑 [Bridge] Shutting down...")
