@@ -12,7 +12,7 @@
 
 # 🎥 Full System Demonstration
 
-> GIF will be added after video processing.
+
 
 ![Full System Demo](docs/gifs/full_system_demo.gif)
 
