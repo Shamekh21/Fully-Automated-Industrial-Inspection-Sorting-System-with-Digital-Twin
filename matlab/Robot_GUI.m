@@ -1,11 +1,62 @@
 function Robot_GUI()
     P = paths();
  
-    % =====================================================================
-    % Premium Industrial GUI for 6-DOF Robot with Pick & Place Sequence
-    % Features: AI Optimization, Auto-Selector, TCP/IP Server, Full Cycle
-    % Auto/Manual Multi-Mode & Emergency Stop Integration
-    % =====================================================================
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%     FULLY AUTOMATED INDUSTRIAL INSPECTION & SORTING SYSTEM              %
+%                     WITH DIGITAL TWIN TECHNOLOGY                        %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Course:
+% MAE401 - Artificial Intelligence
+%
+% Faculty:
+% Faculty of Engineering, Benha University
+%
+% Project Type:
+% AI-Driven Cyber-Physical System (CPS)
+% Industrial Inspection, Sorting, and Digital Twin Integration
+%
+% Project Description:
+% This project presents a fully automated industrial inspection and
+% sorting system integrating:
+%
+%   - Computer Vision
+%   - Deep Learning (CNN)
+%   - Robotics & Kinematics
+%   - Optimization Algorithms
+%   - Digital Twin Technology
+%   - TCP/IP Industrial Communication
+%   - Hardware-in-the-Loop (HIL)
+%
+% The system performs real-time defect detection on industrial casting
+% components and automatically controls a UR5 robotic manipulator for
+% intelligent pick-and-place operations.
+%
+% Team Members:
+%   Mahmoud Shamekh
+%   Omar Metwally
+%   Omar Shaqran
+%   Mohamed Abdeltawab
+%
+% Academic Supervisor:
+%   Dr. Amro Shafik
+%
+% Teaching Assistant:
+%   Eng. Mohamed Nasser
+%
+% Technologies:
+%   MATLAB
+%   Python
+%   PyTorch
+%   CoppeliaSim
+%   Arduino
+%
+% Year:
+% Spring 2026
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     robot = loadrobot('universalUR5', 'DataFormat', 'column');
     endEffector = 'tool0';
