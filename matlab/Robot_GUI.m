@@ -59,23 +59,23 @@ function Robot_GUI()
     set(fig, 'CloseRequestFcn', @closeApp);
     function closeApp(~, ~)
         disp('🛑 Initiating System Shutdown...');
-        % 1. وقف التايمر
+        % 1. stop the timer
        
         try stop(sensorTimer); delete(sensorTimer); catch, end
         
-        % 2. قفل البايثون والـ TCP
+        % 2.Python and TCP locking
         if ~isempty(visionServer) && isvalid(visionServer)
             try writeline(visionServer, "QUIT"); catch, end 
             delete(visionServer); 
         end
         
-        % 3. فصل الكوبيليا بأمان
+        % 3. Separate coppelia safely
         if vrepConnected
             vrep.simxFinish(clientID);
             vrep.delete();
         end
         
-        % 4. مسح الواجهة
+        % 4. Clear the interface
         delete(fig);
         disp('🛑 System fully terminated.');
     end
