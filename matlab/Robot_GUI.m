@@ -14,7 +14,7 @@ function Robot_GUI()
     qCurrent = deg2rad(qHome_deg(:));
     visionServer = [];
     
-    % 🌟 إعداد اتصال CoppeliaSim 🌟
+    % 🌟 CoppeliaSim Connection Setup 🌟
     vrep = remApi('remoteApi');
     vrep.simxFinish(-1);
     clientID = vrep.simxStart('127.0.0.1', 19000, true, true, 5000, 5);
