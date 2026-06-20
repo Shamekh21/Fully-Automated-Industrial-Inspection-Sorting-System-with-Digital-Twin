@@ -105,7 +105,16 @@ Arduino HMI Feedback
 The project operates using a distributed communication framework.
 
 ```text
-                    TCP/IP
+        +-------------------------+
+        |      CoppeliaSim        |
+        | Conveyor + UR5 + Sensor |
+        +-------------------------+
+                    |
+                    | Port 19000
+                    |
+                    ▼
+
+           TCP/IP
         +-------------------------+
         |         MATLAB          |
         |  IK / FK / Optimizers   |
@@ -127,14 +136,7 @@ The project operates using a distributed communication framework.
         | LCD + LEDs              |
         +-------------------------+
 
-                    ▲
-                    |
-                    | Port 19000
-                    |
-        +-------------------------+
-        |      CoppeliaSim        |
-        | Conveyor + UR5 + Sensor |
-        +-------------------------+
+      
 ```
 
 ---
