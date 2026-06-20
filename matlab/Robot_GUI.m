@@ -37,7 +37,7 @@ function Robot_GUI()
 % Team Members:
 %   Mahmoud Shamekh
 %   Omar Metwally
-%   Omar Shaqran
+%   Omar Shokran
 %   Mohamed Abdeltawab
 %
 % Academic Supervisor:
