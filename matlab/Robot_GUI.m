@@ -52,14 +52,15 @@ function Robot_GUI()
 
     fig = figure('Name', '🤖 6-DOF Robot AI Optimization Twin & CoppeliaSim', 'Position', [50, 50, 1300, 780], 'NumberTitle', 'off', 'MenuBar', 'none', 'Color', [0.94 0.95 0.97]);
     
-    % 🌟 تايمر مراقبة الحساس 🌟
+   % 🌟 Sensor Monitoring Timer 🌟
     sensorTimer = timer('ExecutionMode', 'fixedRate', 'Period', 0.5, 'TimerFcn', @checkProximitySensor);
 
-    % 🌟 دالة الإغلاق الشاملة لكل حاجة (بتشتغل مع حرف Q أو زرار Exit) 🌟
+% 🌟 shutdown function for everything (works with the letter Q or the Exit button) 🌟
     set(fig, 'CloseRequestFcn', @closeApp);
     function closeApp(~, ~)
         disp('🛑 Initiating System Shutdown...');
         % 1. وقف التايمر
+       
         try stop(sensorTimer); delete(sensorTimer); catch, end
         
         % 2. قفل البايثون والـ TCP
@@ -120,7 +121,7 @@ function Robot_GUI()
     uicontrol('Parent', panelConsole, 'Style', 'pushbutton', 'String', '🏆 Run ALL & Benchmark Best', 'Units', 'normalized', 'Position', [0.03, 0.04, 0.46, 0.18], 'FontSize', 11, 'FontWeight', 'bold', 'ForegroundColor', [1 1 1], 'BackgroundColor', [0.78 0.15 0.15], 'Callback', @runAllAndPickBest);
     uicontrol('Parent', panelConsole, 'Style', 'pushbutton', 'String', '🏠 Reset Home', 'Units', 'normalized', 'Position', [0.52, 0.04, 0.21, 0.18], 'FontSize', 11, 'FontWeight', 'bold', 'BackgroundColor', [0.88 0.92 0.96], 'Callback', @goHome);
     
-    % 🌟 تعديل زرار Exit عشان يستخدم دالة الإغلاق الشاملة 🌟
+    % 🌟 Modified the Exit button to use the global shutdown function 🌟
     uicontrol('Parent', panelConsole, 'Style', 'pushbutton', 'String', '🛑 Exit', 'Units', 'normalized', 'Position', [0.75, 0.04, 0.22, 0.18], 'FontSize', 11, 'FontWeight', 'bold', 'BackgroundColor', [0.94 0.82 0.82], 'Callback', @closeApp);
 
     function logMsg(msg)
@@ -163,8 +164,8 @@ function Robot_GUI()
             if src.NumBytesAvailable > 0
                 dataStr = readline(src);
                 if isempty(dataStr) || dataStr == "", return; end
-                
-                % 🌟 استقبال أمر الـ STOP_SYSTEM من البايثون وإغلاق البرنامج 🌟
+               
+                % 🌟 Receiving the STOP_SYSTEM command from Python and closing the program 🌟
                 if contains(dataStr, 'STOP_SYSTEM')
                     logMsg('🛑 [NET] Python requested Full Shutdown. Closing system...');
                     closeApp();
